@@ -63,8 +63,8 @@ import pickle
 app = Flask(__name__)
 
 # Load the trained model and vectorizer
-model_path = "D:/SEM 6/MACHINE LEARNING/Project/uploads/model.pkl"  # Replace with the actual path to your model
-vectorizer_path = "D:/SEM 6/MACHINE LEARNING/Project/uploads/vectorizer.pkl"  # Replace with the actual path to your vectorizer
+model_path = "uploads/model.pkl"  # Replace with the actual path to your model
+vectorizer_path = "uploads/vectorizer.pkl"  # Replace with the actual path to your vectorizer
 
 # Load the model
 with open(model_path, "rb") as f:
