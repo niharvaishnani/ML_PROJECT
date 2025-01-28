@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Comparison Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .best-model {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algorithm Comparison Results</h1>
+
+    <h2>Accuracy Results:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Algorithm</th>
+                <th>Accuracy</th>
+            </tr>
+        </thead>
+        <tbody id="resultsTable">
+            <!-- Results will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <h2>Best Algorithm:</h2>
+    <p id="bestModel" class="best-model">Loading...</p>
+
+    <script>
+        // Example: Replace this data dynamically via a server-side script or API call
+        const results = {
+            "Logistic Regression": 0.85,
+            "Decision Tree": 0.78
+        };
+
+        const bestModel = "Logistic Regression";
+
+        // Populate the table
+        const resultsTable = document.getElementById('resultsTable');
+        for (const [algorithm, accuracy] of Object.entries(results)) {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${algorithm}</td><td>${accuracy}</td>`;
+            resultsTable.appendChild(row);
+        }
+
+        // Show the best model
+        document.getElementById('bestModel').textContent = bestModel;
+    </script>
+</body>
+</html>
